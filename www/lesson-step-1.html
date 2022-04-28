@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title>1. A cat is an animal</title>
+	<meta name="description" content="lingva">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="canonical" href="/">
+	<link rel="alternate" hreflang="uk" href="/">
+	<link rel="alternate" hreflang="ru" href="/">
+	<style>
+		<!--#include virtual="/css/lingva.ua.css" -->
+	</style>
+	<script>
+		var
+			clickButton = function (element, field) {
+				var
+					clone = element.cloneNode(true),
+					target = document.getElementById(field);
+
+				//clone.setAttribute('onclick', 'this.parentElement.removeChild(this)');
+				clone.removeAttribute('onclick');
+				element.classList.add('choosed');
+				console.log(clone, target);
+				target.appendChild(clone);
+			}
+	</script>
+</head>
+<body data-lesson-part="help">
+	<header>
+		<div class="first">
+			<div class="container">
+				<div class="left">
+					<div class="switch" title="Меню"></div>
+					<a class="logo" href="/" title="На головну"></a>
+				</div>
+				<div class="center">
+					<div class="menu lesson">
+						<div class="text">Виберіть завдання</div>
+						<div class="icon"></div>
+						<div class="items">
+							<div class="item" data-lesson-part='step1' data-state="started">
+								<div class="flex">
+									<div class="sequence-number">1</div>
+									<div class="type">
+										<div class="from"><span class="icon listen"></span><span class="language">eng</span></div>
+										<div class="icon right-arrow"></div>
+										<div class="to"><span class="icon tap"></span><span class="language">eng</span></div>
+									</div>
+									<div class="result">
+										<div class="done">60</div>
+										<div class="from">120</div>
+									</div>
+								</div>
+								<div class="progress"><div style="width: 50%"></div></div>
+							</div>
+							<div class="item" data-lesson-part='step2' data-state="">
+								<div class="flex">
+									<div class="sequence-number">2</div>
+									<div class="type">
+										<div class="from"><span class="icon view"></span><span class="language">ukr</span></div>
+										<div class="icon right-arrow"></div>
+										<div class="to"><span class="icon tap"></span><span class="language">eng</span></div>
+									</div>
+									<div class="result">
+										<div class="done">0</div>
+										<div class="from">120</div>
+									</div>
+								</div>
+								<div class="progress"><div style="width: 0%"></div></div>
+							</div>
+							<div class="item" data-lesson-part='step3' data-state="completed">
+								<div class="flex">
+									<div class="sequence-number">3</div>
+									<div class="type">
+										<div class="from"><span class="icon view"></span><span class="language">ukr</span></div>
+										<div class="icon right-arrow"></div>
+										<div class="to"><span class="icon write"></span><span class="language">eng</span></div>
+									</div>
+									<div class="result">
+										<div class="done">120</div>
+										<div class="from">120</div>
+									</div>
+								</div>
+								<div class="progress"><div style="width: 100%"></div></div>
+							</div>
+							<div class="item" data-lesson-part='repeat' data-state="completed">
+								<div class="flex">
+									<div class="sequence-number">П</div>
+									<div class="type">
+										<span class="icon spinner"></span><span class="name">Повторити</span>
+									</div>
+									<div class="result">
+										<div class="done">120</div>
+										<div class="from">120</div>
+									</div>
+								</div>
+								<div class="progress"><div style="width: 100%"></div></div>
+							</div>
+							<div class="item" data-lesson-part='test' data-state="">
+								<div class="flex">
+									<div class="sequence-number">Т</div>
+									<div class="type">
+										<span class="icon indicator"></span><span class="name">Тест</span>
+									</div>
+									<div class="result">
+										<div class="done">0</div>
+										<div class="from">120</div>
+									</div>
+								</div>
+								<div class="progress"><div style="width: 0%"></div></div>
+							</div>
+							<div class="item" data-lesson-part='grammar' data-state="">
+								<div class="flex">
+									<div class="sequence-number">Г</div>
+									<div class="type">
+										<span class="icon view"></span><span class="name">Граматика</span>
+									</div>
+									<div class="result">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="right">
+					<div class="menu user" data-user="logged" data-present>
+						<div class="switch" data-user="not-logged"><div class="icon"></div><div class="text">Увійти</div></div>
+						<div class="items" data-user="not-logged">
+							<div class="text">Увійти за допомогою електронної пошти</div>
+							<form action="/" name="form-user-desktop">
+								<div class="form-input">
+									<label for="form-user-desktop-email">Електронна пошта</label>
+									<input class="block" type="email" name="form-user-desktop-email" id="form-user-desktop-email" autocomplete="off" required>
+									<div class="input-error-text" data-error-type="1">Вкажіть адресу електронної пошти</div>
+								</div>
+								<button type="submit" class="button type1 green">Отримати доступ</button>
+							</form>
+							<div class="text">або через соціальну мережу</div>
+							<button type="button" class="button type1 facebook">Facebook</button>
+							<button type="button" class="button type1 google">Google</button>
+						</div>
+						<div class="switch" data-user="logged"><div class="icon"></div><div class="text">Профіль</div></div>
+						<div class="items" data-user="logged">
+							<div class="item user-name"></div>
+							<div class="item link left-icon profile"><a class="link" href="/user-ua.html" title="Обліковий запис">Обліковий запис</a></div>
+							<div class="item link left-icon history"><a class="link" href="/history-ua.html" title="Історія замовлень">Статистика</a></div>
+							<div class="item link left-icon response"><a class="link" href="/response-ua.html" title="Написати відгук">Написати відгук</a></div>
+							<div class="item link left-icon exit"><a class="link" href="/" title="Вийти">Вийти</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="second">
+			<div class="container">
+				<div class="top-line mobile">
+					<a class="logo" href="/" title="На головну"></a>
+				</div>
+				<div class="menu language mobile">
+					<a class="switch" href="/" title="Перейти к версии на русском языке">рус</a>
+				</div>
+				<div class="menu user mobile" data-user="logged" data-present>
+					<div class="switch" data-user="not-logged"><div class="icon"></div><div>Увійти</div></div>
+					<div class="items" data-user="not-logged">
+						<div class="text">Увійти за допомогою електронної пошти</div>
+						<form action="/" name="form-user-mobile">
+							<div class="form-input">
+								<label for="form-user-mobile-email">Електронна пошта</label>
+								<input class="block" type="email" name="form-user-mobile-email" id="form-user-mobile-email" autocomplete="off" required>
+								<div class="input-error-text" data-error-type="1">Вкажіть адресу електронної пошти</div>
+							</div>
+							<button type="submit" class="button type1 green">Отримати доступ</button>
+						</form>
+						<div class="text">або через соціальну мережу</div>
+						<button type="button" class="button type1 facebook">Facebook</button>
+						<button type="button" class="button type1 google">Google</button>
+					</div>
+					<div class="switch" data-user="logged"><div class="icon"></div><div class="item user-name"></div></div>
+					<div class="items" data-user="logged">
+						<div class="item link left-icon profile"><a class="link" href="/user-ua.html" title="Обліковий запис">Обліковий запис</a></div>
+						<div class="item link left-icon history"><a class="link" href="/history-ua.html" title="Статистика">Статистика</a></div>
+						<div class="item link left-icon response"><a class="link" href="/response-ua.html" title="Написати відгук">Написати відгук</a></div>
+						<div class="item link left-icon exit"><a class="link" href="/" title="Вийти">Вийти</a></div>
+					</div>
+				</div>
+				<div class="menu links-groups" data-present>
+					<div class="items">
+						<div class="item" data-group-id="1">
+							<div class="section-name">Учням</div>
+							<div class="items">
+								<div class="item link"><a class="link" title="" href="/">Допомога</a></div>
+								<div class="item link"><a class="link" title="" href="/">Часті питання</a></div>
+								<div class="item link"><a class="link" title="" href="/">Вартість</a></div>
+							</div>
+						</div>
+						<div class="item" data-group-id="2">
+							<div class="section-name">Вчителям</div>
+							<div class="items">
+								<div class="item link"><a class="link" title="" href="/">Допомога</a></div>
+								<div class="item link"><a class="link" title="" href="/">Часті питання</a></div>
+								<div class="item link"><a class="link" title="" href="/">Вартість</a></div>
+							</div>
+						</div>
+						<div class="item" data-group-id="3">
+							<div class="section-name">Про lingva.ua</div>
+							<div class="items">
+								<div class="item link"><a class="link" title="" href="/">Хто ми є</a></div>
+								<div class="item link"><a class="link" title="" href="/">Користувачі</a></div>
+								<div class="item link"><a class="link" title="" href="/">Партнери</a></div>
+								<div class="item link"><a class="link" title="" href="/">Контакти</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="shadow-layer"></div>
+	</header>
+	<div class="back-to-parent"><a href="/course.html">Англійська мова A1—A2</a></div>
+	<main>
+		<h1>1. A cat is an animal</h1>
+		<div data-lesson-part="help" class="standard-text">
+			<div><span class="choose-step" data-action="open-lesson-menu">Виберіть завдання</span> з виринаючого меню згори сторінки. Завдання можна проходити у довільному порядку. Якщо ви новачок, виконуйте завдання у вказаному порядку, починаючи з першого. Переходьте до наступного, коли успішно виконали усі вправи поточного завдання.</div>
+			<div class="element">
+				<div class="sequence-number" data-action="step1">1</div>
+				<p>Натисніть на знак звуку та прослухайте фразу англійською мовою. Виберіть слова у вірному порядку натискаючи на них. На першому кроці ви можете отримати максимально 33 % виконання уроку.</p>
+			</div>
+			<div class="element">
+				<div class="sequence-number" data-action="step2">2</div>
+				<p>Прочитайте фразу українською мовою. Натискаючи подані англійські слова у правильному порядку, створіть переклад української фрази. На другому кроці ви можете отримати максимально 67 % виконання уроку.</p>
+			</div>
+			<div class="element">
+				<div class="sequence-number" data-action="step3">3</div>
+				<p>Прочитайте фразу українською мовою. Введіть її переклад англійською мовою.</p>
+			</div>
+			<div class="element">
+				<div class="sequence-number" data-action="grammar">Г</div>
+				<p>Ознайомтеся з граматикою, яку ви вивчаєте у цьому уроці</p>
+			</div>
+		</div>
+		<div data-lesson-part="step1">
+			<div class="question">
+				<div class="voices">
+					<div class="voice" onclick="this.firstElementChild.play()"><audio src="https://static.lingva.ua/audio/en_01_001_086.mp3"></audio></div>
+					<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Male');"></div>
+					<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Female');"></div>
+					<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'US English Female');"></div>
+					<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Male', {rate: 0.7});"></div>
+					<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Female', {rate: 0.7});"></div>
+					<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'US English Female', {rate: 0.7});"></div>
+					<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Male', {rate: 1});"></div>
+					<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Female', {rate: 1});"></div>
+					<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'US English Female', {rate: 1});"></div>
+					<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'US English Female', {rate: 1.5, pitch: 2});"></div>
+				</div>
+				<div class="hint" data-open-layer="info"><div class="icon hint"></div></div>
+				<div class="layer with-shadow close-interface" data-layer-type="info">
+					<div class="content">
+						<div class="close-interface" data-close-layer></div>
+						<article>
+							<h1>Відповідь</h1>
+							<div class="standard-text">
+								<p class="right-answer">Darts is a game.</p>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+			<div id="answer1" class="answer"></div>
+			<div class="words">
+				<span lingva_text="pause" onclick="clickButton(this, 'answer1')">pause</span>
+				<span lingva_text="an" onclick="clickButton(this, 'answer1')">an</span>
+				<span lingva_text="truly" onclick="clickButton(this, 'answer1')">truly</span>
+				<span lingva_text="a" onclick="clickButton(this, 'answer1')">a</span>
+				<span lingva_text="wound" onclick="clickButton(this, 'answer1')">wound</span>
+				<span lingva_text="are" onclick="clickButton(this, 'answer1')">are</span>
+				<span lingva_text="environment" onclick="clickButton(this, 'answer1')">environment</span>
+				<span lingva_text="game." onclick="clickButton(this, 'answer1')">game</span>
+				<span lingva_text="Darts" onclick="clickButton(this, 'answer1')">Darts</span>
+				<span lingva_text="milk" onclick="clickButton(this, 'answer1')">milk</span>
+				<span lingva_text="is" onclick="clickButton(this, 'answer1')">is</span>
+				<span lingva_text="candidate" onclick="clickButton(this, 'answer1')">candidate</span>
+				<span lingva_text="connection" onclick="clickButton(this, 'answer1')">connection</span>
+				<span lingva_text="am" onclick="clickButton(this, 'answer1')">am</span>
+				<span lingva_text="unusually" onclick="clickButton(this, 'answer1')">unusually</span>
+				<span lingva_text="manufacturing" onclick="clickButton(this, 'answer1')">manufacturing</span>
+				<span lingva_text="lift" onclick="clickButton(this, 'answer1')">lift</span>
+			</div>
+			<div class="image" style='background-image: url("https://static.lingva.ua/images/en_01_001_086.jpg");'></div>
+		</div>
+		<div data-lesson-part="step2">
+			<div class="question">
+				<div class="text">Дартс – гра. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suscipit sem id tortor posuere, quis ullamcorper ipsum maximus. </div>
+				<div class="hint" data-open-layer="info"><div class="icon hint"></div></div>
+				<div class="layer with-shadow close-interface" data-layer-type="info">
+					<div class="content">
+						<div class="close-interface" data-close-layer></div>
+						<article>
+							<h1>Відповідь</h1>
+							<div class="standard-text">
+								<p class="right-answer">Darts is a game.</p>
+							</div>
+							<div class="voices">
+								<div class="voice" onclick="this.firstElementChild.play()"><audio src="https://static.lingva.ua/audio/en_01_001_086.mp3"></audio></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Male');"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Female');"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'US English Female');"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Male', {rate: 0.7});"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Female', {rate: 0.7});"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'US English Female', {rate: 0.7});"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Male', {rate: 1});"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Female', {rate: 1});"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'US English Female', {rate: 1});"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'US English Female', {rate: 1.5, pitch: 2});"></div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+			<div id="answer2" class="answer"></div>
+			<div class="words">
+				<span lingva_text="pause" onclick="clickButton(this, 'answer2')">pause</span>
+				<span lingva_text="an" onclick="clickButton(this, 'answer2')">an</span>
+				<span lingva_text="truly" onclick="clickButton(this, 'answer2')">truly</span>
+				<span lingva_text="a" onclick="clickButton(this, 'answer2')">a</span>
+				<span lingva_text="wound" onclick="clickButton(this, 'answer2')">wound</span>
+				<span lingva_text="are" onclick="clickButton(this, 'answer2')">are</span>
+				<span lingva_text="environment" onclick="clickButton(this, 'answer2')">environment</span>
+				<span lingva_text="game." onclick="clickButton(this, 'answer2')">game</span>
+				<span lingva_text="Darts" onclick="clickButton(this, 'answer2')">Darts</span>
+				<span lingva_text="milk" onclick="clickButton(this, 'answer2')">milk</span>
+				<span lingva_text="is" onclick="clickButton(this, 'answer2')">is</span>
+				<span lingva_text="candidate" onclick="clickButton(this, 'answer2')">candidate</span>
+				<span lingva_text="connection" onclick="clickButton(this, 'answer2')">connection</span>
+				<span lingva_text="am" onclick="clickButton(this, 'answer2')">am</span>
+				<span lingva_text="unusually" onclick="clickButton(this, 'answer2')">unusually</span>
+				<span lingva_text="manufacturing" onclick="clickButton(this, 'answer2')">manufacturing</span>
+				<span lingva_text="lift" onclick="clickButton(this, 'answer2')">lift</span>
+			</div>
+			<div class="image" style='background-image: url("https://static.lingva.ua/images/en_01_001_086.jpg");'></div>
+		</div>
+		<div data-lesson-part="step3">
+			<div class="question">
+				<div class="text">Дартс – гра.</div>
+				<div class="hint" data-open-layer="info"><div class="icon hint"></div></div>
+				<div class="layer with-shadow close-interface" data-layer-type="info">
+					<div class="content">
+						<div class="close-interface" data-close-layer></div>
+						<article>
+							<h1>Відповідь</h1>
+							<div class="standard-text">
+								<p class="right-answer">Darts is a game.</p>
+							</div>
+							<div class="voices">
+								<div class="voice" onclick="this.firstElementChild.play()"><audio src="https://static.lingva.ua/audio/en_01_001_086.mp3"></audio></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Male');"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Female');"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'US English Female');"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Male', {rate: 0.7});"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Female', {rate: 0.7});"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'US English Female', {rate: 0.7});"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Male', {rate: 1});"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Female', {rate: 1});"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'US English Female', {rate: 1});"></div>
+								<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'US English Female', {rate: 1.5, pitch: 2});"></div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+			<div id="answer3" class="answer" contenteditable></div>
+			<div class="image" style='background-image: url("https://static.lingva.ua/images/en_01_001_086.jpg");'></div>
+		</div>
+		<section id="grammar" data-lesson-part="grammar">
+			<h1>Граматика</h1>
+			<div>Вважаю, що варто робити повноцінні гарно оформлені статті з граматики.
+			З них можна згодом зробити на цьому ресурсі відповідний розділ граматики зі зворотніми посиланнями на відповідні уроки.
+			Пропоную використовувати як приклад статті за наведеними нижче посиланнями.
+			Якщо є бажання, я розроблю стилі для цього розділу відповідно до типів матеріалу, які можуть бути тут подані.
+			Від вас потрібно вирішити, які саме типи матеріалів ви будете подавати у цьому розділі, та сказати мені.</div>
+			<section>
+				<h1>Артиклі <span lang="en">a</span> та <span lang="en">an</span></h1>
+				<div class="standard-text">
+					<p><span lang="en">A</span> та <span lang="en">an</span> — це артиклі.</p>
+				</div>
+			</section>
+			<section>
+				<h1>Коли використовуємо <span lang="en">a</span>, а коли <span lang="en">an</span></h1>
+				<div class="standard-text">
+					<p><b><span lang="en">a</span></b> — ставимо перед словом, яке починається на <strong class="red">приголосний звук</strong> а не літеру.</p>
+					<ul>
+						<li>a united group /ə ju:ˈnaɪtɪd …/</li>
+						<li>a university /ə ju:niˈvɜ:sɪti/</li>
+						<li>a one-year-old child /ə wʌn …/</li>
+					</ul>
+					<p><b><span lang="en">an</span></b> — ставимо перед словом, яке починається на <strong class="red">голосний звук</strong>, а не літеру.</p>
+					<p>an apple</p>
+					<p>an old shoe</p>
+					<p>an orchestra</p>
+					<p>an umbrella</p>
+					<p>a animal «э энимал» (неправильно )</p>
+					<p>an animal «эн энимал» (правильно)</p>
+					<p>a hero — an honest person</p>
+					<p>a Ukrainian girl — an Italian lady</p>
+					<p>a university — an uprising</p>
+				</div>
+			</section>
+			<section>
+				<h1>Посилання</h1>
+				<div class="standard-text">
+					<ul>
+						<li><a href="https://learnenglish.britishcouncil.org/en/english-grammar/determiners-and-quantifiers/indefinite-article-and">indefinite article: a and an</a> (British Council)</li>
+						<li><a href="https://dictionary.cambridge.org/grammar/british-grammar/determiners/a-an-and-the">A/an and the</a> (Cambridge University Press)</li>
+						<li><a href="http://www.ef.com/english-resources/english-grammar/indefinite-articles/">Indefinite Articles</a> (EF Education First)</li>
+						<li><a href="https://www.englishclub.com/pronunciation/a-an.htm">When to Say a or an</a> (EnglishClub)</li>
+					</ul>
+				</div>
+			</section>
+		</section>
+		<div class="bottom-fixed-string">
+			<div class="progress"><div style="width: 70%"></div></div>
+			<div class="navigation">
+				<div onclick="document.querySelector('body').classList.toggle('page-left-menu-open');"><div class="icon menu"></div></div>
+				<a href="#" class="link-to-home" data-home><div class="icon home"></div></a>
+				<div data-open-layer="info" class="dictionary" data-dictionary><div class="icon dictionary"></div></div>
+				<div class="layer with-shadow close-interface" data-layer-type="info" data-layer-content="dictionary">
+					<div class="content">
+						<div class="close-interface" data-close-layer></div>
+						<article class="standard-text">
+							<h1>Словник</h1>
+								<section>
+									<h1>Darts is a game.</h1>
+									<div class="voices">
+										<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Male');"></div>
+										<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'UK English Female');"></div>
+										<div class="voice" onclick="responsiveVoice.speak('Darts is a game', 'US English Female');"></div>
+									</div>
+									<div class="translate">Дартс — гра.</div>
+								</section>
+								<section>
+									<h1>darts</h1>
+									<div class="grammar">
+										<span class="pos" title="A word that refers to a person, place, idea, event or thing.">noun</span>
+										[<span class="gc" title="Uncountable noun: noun with no plural form. Cannot be used with 'a', 'an', or 'one'.">U</span>]
+										<span class="pron">/<span class="ipa">dɑrts</span>/</span>
+									</div>
+									<div class="voices">
+										<div class="voice" onclick="responsiveVoice.speak('darts', 'UK English Male');"></div>
+										<div class="voice" onclick="responsiveVoice.speak('darts', 'UK English Female');"></div>
+										<div class="voice" onclick="responsiveVoice.speak('darts', 'US English Female');"></div>
+									</div>
+									<div class="translate">дартс</div>
+								</section>
+								<section>
+									<h1>is</h1>
+									<div class="voices">
+										<div class="voice" onclick="responsiveVoice.speak('is', 'UK English Male');"></div>
+										<div class="voice" onclick="responsiveVoice.speak('is', 'UK English Female');"></div>
+										<div class="voice" onclick="responsiveVoice.speak('is', 'US English Female');"></div>
+									</div>
+								</section>
+								<section>
+									<h1>a</h1>
+									<div class="voices">
+										<div class="voice" onclick="responsiveVoice.speak('a', 'UK English Male');"></div>
+										<div class="voice" onclick="responsiveVoice.speak('a', 'UK English Female');"></div>
+										<div class="voice" onclick="responsiveVoice.speak('a', 'US English Female');"></div>
+									</div>
+									<div class="translate">неозначений артикль</div>
+								</section>
+								<section>
+									<h1>game</h1>
+									<div class="grammar">
+										<span class="pos" title="A word that refers to a person, place, idea, event or thing.">noun</span>
+										[<span title="Countable noun: a noun that has both singular and plural forms." class="gc">C</span>]
+										<span class="pron">/<span class="ipa">ɡeɪm</span>/</span>
+									</div>
+									<div class="voices">
+										<div class="voice" onclick="responsiveVoice.speak('game', 'UK English Male');"></div>
+										<div class="voice" onclick="responsiveVoice.speak('game', 'UK English Female');"></div>
+										<div class="voice" onclick="responsiveVoice.speak('game', 'US English Female');"></div>
+									</div>
+									<div class="translate">гра</div>
+								</section>
+						</article>
+					</div>
+				</div>
+				<div class="exercise">
+					<div class="icon prev"></div>
+					<div class="number">999</div>
+					<div class="icon next"></div>
+				</div>
+				<div data-open-layer="info"><div class="icon help"></div></div>
+				<div class="layer with-shadow close-interface" data-layer-type="info" data-layer-content="help">
+					<div class="content">
+						<div class="close-interface" data-close-layer></div>
+						<article>
+							<h1>Робота з уроком</h1>
+							<section>
+								<h1>Верхнє виринаюче меню</h1>
+								<div class="standard-text">
+									<div>Виберіть завдання з виринаючого меню згори сторінки. Завдання можна проходити у довільному порядку. Якщо ви новачок, виконуйте завдання у вказаному порядку, починаючи з першого. Переходьте до наступного, коли успішно виконали усі вправи поточного завдання.</div>
+									<div class="element">
+										<div class="sequence-number">1</div>
+										<div>Натисніть на знак звуку та прослухайте фразу англійською мовою. Виберіть слова у вірному порядку натискаючи на них. На першому кроці ви можете отримати максимально 33 % виконання уроку.</div>
+									</div>
+									<div class="element">
+										<div class="sequence-number">2</div>
+										<div>Прочитайте фразу українською мовою. Натискаючи подані англійські слова у правильному порядку, створіть переклад української фрази. На другому кроці ви можете отримати максимально 67 % виконання уроку.</div>
+									</div>
+									<div class="element">
+										<div class="sequence-number">3</div>
+										<div>Прочитайте фразу українською мовою. Введіть її переклад англійською мовою.</div>
+									</div>
+									<div class="element">
+										<div class="sequence-number">G</div>
+										<div>Ознайомтеся з граматикою, яку ви вивчаєте у цьому уроці</div>
+									</div>
+								</div>
+							</section>
+							<section>
+								<h1>Нижній фіксований рядок</h1>
+								<div class="standard-text">
+									<div class="element">
+										<div class="icon help"></div>
+										<div>Допомога щодо конкретної сторінки.</div>
+									</div>
+									<div class="element">
+										<div class="icon bookmark"></div>
+										<div>Дозволяє додати вправу у список для повторення чи забрати її звідти.</div>
+									</div>
+									<div class="element">
+										<div class="icon dictionary"></div>
+										<div>Словник до вправи.</div>
+									</div>
+									<div class="element">
+										<div class="icon home"></div>
+										<div>Панель користувача.</div>
+									</div>
+									<div class="element">
+										<div class="exercise">
+											<div><div class="icon prev"></div></div>
+											<div class="number">999</div>
+											<div><div class="icon next"></div></div>
+										</div>
+										<div>Перехід між вправами.</div>
+									</div>
+								</div>
+							</section>
+						</article>
+					</div>
+				</div>
+				<div class="bookmark"><div class="icon bookmark" onclick="this.classList.toggle('active')"></div></div>
+			</div>
+		</div>
+	</main>
+	<!--#include virtual="/inc/project-footer.inc" -->
+	<script src="/js/lingva.ua.js"></script>
+	<script>
+		if (Lingva) {
+			if (typeof Lingva.Data === 'object') {
+				Lingva.Data.page = {
+					'type': 'lesson',
+				};
+				Lingva.Data.user = {
+					'name': 'Андрій Красоткін',
+					'avatar': '/img/photo.jpg',
+				};
+			}
+			else {
+				console.error('Wrong Lingva.Data type.');
+			}
+		}
+		else {
+			console.error('Global variable Lingva not exists.');
+		}
+	</script>
+	<script async src='https://code.responsivevoice.org/responsivevoice.js?key=5OXgai8b'></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title>registration</title>
+	<meta name="description" content="lingva">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="canonical" href="/">
+	<link rel="alternate" hreflang="uk" href="/">
+	<link rel="alternate" hreflang="ru" href="/">
+	<link rel="stylesheet" href="/css/ukrlingva.css">
+	<script src="/js/ukrlingva.js"></script>
+</head>
+<body data-page="registration">
+	<header>
+		<div class="container">
+			<div class="progress-line"></div>
+			<div class="navigation-line">
+				<a class="logo" href="/"></a>
+				<div class="right-switches">
+					<div class="main-menu-switch"></div>
+				</div>
+			</div>
+		<!--#include virtual="/inc/ukrlingva-main-menu-container.inc" -->
+		</div>
+	</header>
+	<main>
+		<article>
+			<h1 class="login">Register with</h1>
+			<div><button type='button' class='facebook'>Facebook</button></div>
+			<div><button type='button' class="google">Google</button></div>
+			<div class="or">OR</div>
+			<div class="email"><input type="text" placeholder="E-mail"></div>
+			<div class="checkbox-with-text"><input type="checkbox"> I agree with the <a href="/">Privacy Policy</a></div>
+			<div class="checkbox-with-text"><input type="checkbox"> I agree to receive e-mails</div>
+			<div><button type="button" class="create-account">Create Account</button></div>
+			<div><button type="button" class="already-have-account">I already have an account</button></div>
+			<div><button type="button" class="skip">Skip</button></div>
+		</article>
+	</main>
+	<footer></footer>
+	<script>
+		if (UkrLingva) {
+			if (typeof UkrLingva.Data === 'object') {
+				UkrLingva.Data.page = {
+					'type': 'registration',
+				};
+			}
+			else {
+				console.error('Wrong UkrLingva.Data type.');
+			}
+		}
+		else {
+			console.error('Global variable UkrLingva not exists.');
+		}
+	</script>
+</body>
+</html>

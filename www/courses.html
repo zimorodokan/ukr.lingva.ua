@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content="lingva">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="canonical" href="/">
+	<link rel="alternate" hreflang="uk" href="/">
+	<link rel="alternate" hreflang="ru" href="/">
+	<style>
+		<!--#include virtual="/css/lingva.ua.css" -->
+	</style>
+</head>
+<body>
+	<!--#include virtual="/inc/project-header.inc" -->
+	<main>
+		<div class="course-catalogue">
+			<div class="course">
+				<div class="image" data-background-image-url="https://d2rhekw5qr4gcj.cloudfront.net/img/400sqf/from/uploads/course_photos/32000160513120643.jpg"></div>
+				<div class="name">Англійська мова A1—A2</div>
+			</div>
+			<div class="course">
+				<div class="image" data-background-image-url="https://d2rhekw5qr4gcj.cloudfront.net/img/400sqf/from/uploads/course_photos/32000160513120655.jpg"></div>
+				<div class="name">Англійська мова B1—B2</div>
+			</div>
+			<div class="course">
+				<div class="image" data-background-image-url="https://d2rhekw5qr4gcj.cloudfront.net/img/400sqf/from/uploads/course_photos/32000160513120643.jpg"></div>
+				<div class="name">Английский язык A1—A2</div>
+			</div>
+			<div class="course">
+				<div class="image" data-background-image-url="https://d2rhekw5qr4gcj.cloudfront.net/img/400sqf/from/uploads/course_photos/32000160513120655.jpg"></div>
+				<div class="name">Английский язык B1—B2</div>
+			</div>
+		</div>
+	</main>
+	<!--#include virtual="/inc/project-footer.inc" -->
+	<script src="/js/lingva.ua.js"></script>
+	<script>
+		if (Lingva) {
+			if (typeof Lingva.Data === 'object') {
+				Lingva.Data.page = {
+					'type': 'courses',
+				};
+			}
+			else {
+				console.error('Wrong Lingva.Data type.');
+			}
+		}
+		else {
+			console.error('Global variable Lingva not exists.');
+		}
+	</script>
+</body>
+</html>
